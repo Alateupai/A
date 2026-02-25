@@ -2,6 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pergunta Importante ❤️</title>
 
 <style>
@@ -24,15 +26,17 @@
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         color: white;
+        position: relative;
+        width: 350px;
     }
 
     h2 {
-        font-size: 32px;
-        margin-bottom: 40px;
+        font-size: 26px;
+        margin-bottom: 30px;
     }
 
     button {
-        padding: 12px 30px;
+        padding: 12px 25px;
         font-size: 18px;
         border: none;
         border-radius: 30px;
@@ -45,6 +49,8 @@
         background: white;
         color: #ff4e50;
         font-weight: bold;
+        position: relative;
+        z-index: 2;
     }
 
     #sim:hover {
@@ -53,31 +59,32 @@
     }
 
     #nao {
-        position: absolute;
         background: white;
         color: #1e90ff;
         font-weight: bold;
+        position: absolute;
     }
-
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>More...? ❤️</h1>
-	<h2>Quer ver uma viadagem?</h2>
+    <h2>Você quer viver essa história comigo? ❤️</h2>
     <button id="sim">Sim</button>
     <button id="nao">Não</button>
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+
     const botaoNao = document.getElementById("nao");
     const botaoSim = document.getElementById("sim");
     const container = document.querySelector(".container");
 
-  
+    // Botão NÃO fugindo dentro da caixa
     botaoNao.addEventListener("mouseover", function() {
+
         const larguraMax = container.clientWidth - botaoNao.offsetWidth;
         const alturaMax = container.clientHeight - botaoNao.offsetHeight;
 
@@ -88,10 +95,13 @@
         botaoNao.style.top = novaPosicaoY + "px";
     });
 
-    
+    // Botão SIM redirecionando corretamente
     botaoSim.addEventListener("click", function() {
-        window.location.href = "pagina2.html";
+        window.location.href = "./pagina2.html";
     });
+
+});
 </script>
+
 </body>
 </html>
